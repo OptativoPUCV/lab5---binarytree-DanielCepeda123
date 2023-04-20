@@ -169,7 +169,7 @@ while(aux != NULL){
     return aux->pair;
   }
   else{
-    if(tree->lower_than(aux->pair->key, key) == 1){
+    if(tree->lower_than(aux->pair->key, key) == 0){
       aux = aux->left;
     }
     else{
