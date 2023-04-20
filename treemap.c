@@ -118,7 +118,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     }
 
       
-    }while (aux->right != NULL || aux->left != NULL)
+    }while (aux->right != NULL || aux->left != NULL);
   
 
 
