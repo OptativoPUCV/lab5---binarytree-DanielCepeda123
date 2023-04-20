@@ -152,10 +152,17 @@ while(aux != NULL){
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-  TreeNode *minimo = minimum(tree->root);
-  //TreeNode *siguiente;
+ /* TreeNode *minimo = minimum(tree->root);
+  TreeNode *siguiente = minimo;
 
   if (minimo->pair->key == key) return minimo->pair;
+  while(1)
+    {
+      if (siguiente->pair->key < key){
+        tree->current = siguiente;
+        siguiente->pair = nextTreeMap(tree);
+      }
+    } */
   //TreeNode *aux = tree->root;
   
     return NULL;
@@ -176,6 +183,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     tree->current = siguiente;
     return siguiente->pair;
   }else{
+    
     padre = tree->current->parent;
     if(padre == NULL) return NULL;
     
