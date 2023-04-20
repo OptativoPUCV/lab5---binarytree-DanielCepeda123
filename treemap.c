@@ -200,9 +200,11 @@ Pair * nextTreeMap(TreeMap * tree) {
   TreeNode *padre;
   
   if(tree->current->right != NULL){
+    // If there is a right subtree, find the minimum value in it
     siguiente = minimum(tree->current->right);
     tree->current = siguiente;
     return siguiente->pair;
+  }
   }else{
     
     padre = tree->current->parent;
