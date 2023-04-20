@@ -211,6 +211,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     padre = tree->current->parent;
     if(padre->parent == NULL) return NULL;
     while (padre != NULL && tree->lower_than(tree->current->pair->key, padre->pair->key)){
+      if(padre->parent == NULL) return NULL;
       padre = padre->parent;
     }
     // If we reached the root node without finding a larger value, we're done
