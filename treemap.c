@@ -128,7 +128,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   }
   else {
     
-    TreeNode* minimo = minimun(node->right);
+    TreeNode* minimo = minimum(node->right);
 
   node->pair->key = minimo->pair->key;
     node->pair->value = minimo->pair->value;
@@ -189,7 +189,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
-  TreeNode *primero = minimun(tree->root);
+  TreeNode *primero = minimum(tree->root);
   
     return primero->pair;
 }
