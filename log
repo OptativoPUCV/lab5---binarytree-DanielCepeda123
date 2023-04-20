@@ -317,3 +317,14 @@ Thu 20 Apr 2023 05:45:38 AM UTC:
  tests:  6|6
 total_score: 5/70
 b86748b
+Thu 20 Apr 2023 05:51:49 AM UTC: 
+ treemap.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:66:13: error: variable ‘aux’ set but not used [-Werror=unused-but-set-variable]
+   66 |   TreeNode *aux;
+      |             ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+56b726c
