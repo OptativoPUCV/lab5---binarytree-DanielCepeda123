@@ -209,6 +209,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     // Traverse up the tree until we find a parent whose value is greater
     // than the current value
     padre = tree->current->parent;
+    if(padre->parent == NULL) return NULL;
     while (padre != NULL && tree->lower_than(tree->current->pair->key, padre->pair->key)){
       padre = padre->parent;
     }
