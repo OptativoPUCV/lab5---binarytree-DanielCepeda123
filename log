@@ -388,3 +388,23 @@ Thu 20 Apr 2023 01:49:23 PM UTC:
  tests:  6|6
 total_score: 5/70
 ecaf993
+Thu 20 Apr 2023 02:00:35 PM UTC: 
+ treemap.c | 15 +--------------
+ 1 file changed, 1 insertion(+), 14 deletions(-)
+In file included from test.c:4:
+treemap.c:114:3: error: expected identifier or ‘(’ before ‘if’
+  114 |   if (aux == NULL) return NULL;
+      |   ^~
+treemap.c:115:3: error: expected identifier or ‘(’ before ‘return’
+  115 |   return NULL;
+      |   ^~~~~~
+treemap.c:116:1: error: expected identifier or ‘(’ before ‘}’ token
+  116 | }
+      | ^
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:112:3: error: control reaches end of non-void function [-Werror=return-type]
+  112 |   }
+      |   ^
+cc1: all warnings being treated as errors
+Compilation failed
+df91388
