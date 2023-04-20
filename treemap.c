@@ -152,6 +152,13 @@ while(aux != NULL){
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
+  TreeNode *aux = tree->root;
+  
+  while()
+    {
+      
+    }
+  
     return NULL;
 }
 
@@ -178,5 +185,5 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
     return padre->pair;
   }
-    return NULL;
+    //return NULL;
 }
