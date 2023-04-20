@@ -360,3 +360,9 @@ treemap.c:72:5: error: ‘aux2’ undeclared (first use in this function); did y
 treemap.c:72:5: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 5fd5dfc
+Thu 20 Apr 2023 06:05:09 AM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  6|6
+total_score: 5/70
+f7f8468
