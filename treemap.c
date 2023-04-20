@@ -196,7 +196,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 Pair * nextTreeMap(TreeMap * tree) {
   TreeNode *siguiente;
-  TreeNode *padre;
+  //TreeNode *padre;
   
   if(tree->current->right != NULL){
     siguiente = minimum(tree->current->right);
