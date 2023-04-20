@@ -538,3 +538,9 @@ treemap.c:74:12: error: ‘root’ undeclared (first use in this function)
 treemap.c:74:12: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 3543737
+Thu 20 Apr 2023 02:53:06 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  8|6
+total_score: 5/70
+e8c4b03
