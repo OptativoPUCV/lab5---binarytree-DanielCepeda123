@@ -948,3 +948,15 @@ Thu 20 Apr 2023 09:10:04 PM UTC:
  tests:  20|3
 total_score: 40/70
 bdac0ce
+Thu 20 Apr 2023 09:10:28 PM UTC: 
+ treemap.c | 23 +++++++++++++----------
+ 1 file changed, 13 insertions(+), 10 deletions(-)
+In file included from test.c:4:
+treemap.c:198:8: error: redefinition of ‘firstTreeMap’
+  198 | Pair * firstTreeMap(TreeMap * tree) {
+      |        ^~~~~~~~~~~~
+treemap.c:192:8: note: previous definition of ‘firstTreeMap’ with type ‘Pair *(TreeMap *)’
+  192 | Pair * firstTreeMap(TreeMap * tree) {
+      |        ^~~~~~~~~~~~
+Compilation failed
+c60a2a7
