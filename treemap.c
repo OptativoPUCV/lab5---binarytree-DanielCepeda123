@@ -212,7 +212,12 @@ Pair * nextTreeMap(TreeMap * tree) {
     while (padre != NULL && tree->lower_than(tree->current->pair->key, padre->pair->key)){
       padre = padre->parent;
     }
+    // If we reached the root node without finding a larger value, we're done
+    if(padre == NULL) return NULL;
+    
+    // Otherwise, update the current node and return the corresponding pair
+    tree->current = padre;
+    return padre->pair;
   }
-    return NULL;
 }
 
