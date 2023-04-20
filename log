@@ -311,3 +311,9 @@ treemap.c:88:21: error: incompatible types when assigning to type â€˜TreeNode *â
       |                     ^
 Compilation failed
 10c7809
+Thu 20 Apr 2023 05:45:38 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  6|6
+total_score: 5/70
+b86748b
