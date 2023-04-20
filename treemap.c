@@ -38,6 +38,8 @@ TreeNode * createTreeNode(void* key, void * value) {
 
 TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
+    TreeNode * root = NULL;
+    TreeNode * current = NULL;
     //new->lower_than = lower_than;
     return NULL;
 }
