@@ -267,3 +267,15 @@ Thu 20 Apr 2023 05:34:26 AM UTC:
  tests:  6|6
 total_score: 5/70
 45ae1f0
+Thu 20 Apr 2023 05:41:09 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:84:14: error: invalid operands to binary != (have ‘TreeNode’ and ‘void *’)
+   84 |   while(*aux != NULL)
+      |         ~~~~ ^~
+      |         |
+      |         TreeNode
+Compilation failed
+4a0f4e1
