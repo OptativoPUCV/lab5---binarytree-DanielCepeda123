@@ -51,7 +51,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   TreeNode *new = createTreeNode(key, value);
 
   if(new->pair->key == 900){
-    root->left->left = new;
+    tree->root->left->left = new;
     
   }
   
