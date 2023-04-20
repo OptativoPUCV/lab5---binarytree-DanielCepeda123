@@ -891,3 +891,11 @@ test.c:(.text+0xea8): undefined reference to `firstTreeMap'
 collect2: error: ld returned 1 exit status
 Compilation failed
 e89e5cb
+Thu 20 Apr 2023 09:06:21 PM UTC: 
+/nix/store/039g378vc3pc3dvi9dzdlrd0i4q93qwf-binutils-2.39/bin/ld: /tmp/ccCL7Vpu.o: in function `first_test1':
+test.c:(.text+0xdf5): undefined reference to `firstTreeMap'
+/nix/store/039g378vc3pc3dvi9dzdlrd0i4q93qwf-binutils-2.39/bin/ld: /tmp/ccCL7Vpu.o: in function `first_test2':
+test.c:(.text+0xea8): undefined reference to `firstTreeMap'
+collect2: error: ld returned 1 exit status
+Compilation failed
+ce007c5
