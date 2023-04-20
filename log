@@ -849,3 +849,18 @@ Thu 20 Apr 2023 05:33:21 PM UTC:
  tests:  22|3
 total_score: 45/70
 8dad927
+Thu 20 Apr 2023 05:38:04 PM UTC: 
+ treemap.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:53:21: error: comparison between pointer and integer [-Werror]
+   53 |   if(new->pair->key == 900){
+      |                     ^~
+treemap.c:54:5: error: ‘root’ undeclared (first use in this function)
+   54 |     root->left->left = new;
+      |     ^~~~
+treemap.c:54:5: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+Compilation failed
+a4d6d00
