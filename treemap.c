@@ -64,7 +64,7 @@ TreeNode * minimum(TreeNode * x){
 
 void removeNode(TreeMap * tree, TreeNode* node) {
 
-  TreeNode *aux = node->parent;
+  /*TreeNode *aux = node->parent;
   TreeNode *aux2;
 
   if(node->left == NULL && node->right == NULL){
@@ -88,7 +88,68 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       }
       
     }
+  } */
+
+  
+  TreeNode *parent = node->parent;
+
+  // Case 1: No children
+  if (node->left == NULL && node->right == NULL) {
+    if (parent == NULL) {
+      // Node is the root
+      tree->root = NULL;
+    } else {
+      // Remove node as a child of its parent
+      if (parent->left == node) {
+        parent->left = NULL;
+      } else {
+        parent->right = NULL;
+      }
+    }
+    free(node->pair);
+    free(node);
   }
+  // Case 2: One child
+  else if (node->left == NULL || node->right == NULL) {
+    TreeNode* child = (node->left != NULL) ? node->left : node->right;
+    child->parent = parent;
+    if (parent == NULL) {
+      // Node is the root
+      tree->root = child;
+    } else {
+      // Replace node with its child as a child of its parent
+      if (parent->left == node) {
+        parent->left = child;
+      } else {
+        parent->right = child;
+      }
+    }
+    free(node->pair);
+    free(node);
+  }
+  // Case 3: Two children
+  else {
+    // Find the minimum node in the right subtree
+    TreeNode* min = node->right;
+    while (min->left != NULL) {
+      min = min->left;
+    }
+    // Replace the node with its minimum child
+    Pair* temp = node->pair;
+    node->pair = min->pair;
+    min->pair = temp;
+    removeNode(tree, min);
+  }
+}
+
+
+
+
+
+
+
+
+  
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
