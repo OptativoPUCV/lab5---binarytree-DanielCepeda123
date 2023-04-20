@@ -91,54 +91,55 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   } */
 
   
-  TreeNode *parent = node->parent;
+  TreeNode *padre = node->parent;
 
   // Case 1: No children
   if (node->left == NULL && node->right == NULL) {
-    if (parent == NULL) {
+    if (padre == NULL) {
       // Node is the root
       tree->root = NULL;
     } else {
       // Remove node as a child of its parent
-      if (parent->left == node) {
-        parent->left = NULL;
+      if (padre->left == node) {
+        padre->left = NULL;
       } else {
-        parent->right = NULL;
+        padre->right = NULL;
       }
     }
-    free(node->pair);
     free(node);
   }
   // Case 2: One child
   else if (node->left == NULL || node->right == NULL) {
-    TreeNode* child = (node->left != NULL) ? node->left : node->right;
-    child->parent = parent;
-    if (parent == NULL) {
+
+    if (node->left != NULL){
+      TreeNode *hijo = node->left;
+    } else{
+      TreeNode* hijo = node->right;
+    }
+    
+    hijo->parent = padre;
+    if (padre == NULL) {
       // Node is the root
-      tree->root = child;
+      tree->root = hijo;
     } else {
       // Replace node with its child as a child of its parent
-      if (parent->left == node) {
-        parent->left = child;
+      if (padre->left == node) {
+        padre->left = hijo;
       } else {
-        parent->right = child;
+        padre->right = hijo;
       }
     }
-    free(node->pair);
     free(node);
   }
   // Case 3: Two children
   else {
     // Find the minimum node in the right subtree
-    TreeNode* min = node->right;
-    while (min->left != NULL) {
-      min = min->left;
-    }
-    // Replace the node with its minimum child
-    Pair* temp = node->pair;
-    node->pair = min->pair;
-    min->pair = temp;
-    removeNode(tree, min);
+    TreeNode* minimo = minimun(node->right);
+
+  node->pair->key = minimo->pair->key;
+    node->pair->value = minimo->pair->value;
+    
+    removeNode(tree, minimo);
   }
 }
 

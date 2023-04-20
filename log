@@ -565,3 +565,26 @@ Thu 20 Apr 2023 03:02:11 PM UTC:
  tests:  8|6
 total_score: 5/70
 8721a2c
+Thu 20 Apr 2023 03:23:24 PM UTC: 
+ treemap.c | 47 ++++++++++++++++++++++++-----------------------
+ 1 file changed, 24 insertions(+), 23 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:115:17: error: unused variable ‘hijo’ [-Werror=unused-variable]
+  115 |       TreeNode *hijo = node->left;
+      |                 ^~~~
+treemap.c:117:17: error: unused variable ‘hijo’ [-Werror=unused-variable]
+  117 |       TreeNode* hijo = node->right;
+      |                 ^~~~
+treemap.c:120:5: error: ‘hijo’ undeclared (first use in this function)
+  120 |     hijo->parent = padre;
+      |     ^~~~
+treemap.c:120:5: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:137:24: error: implicit declaration of function ‘minimun’; did you mean ‘minimum’? [-Werror=implicit-function-declaration]
+  137 |     TreeNode* minimo = minimun(node->right);
+      |                        ^~~~~~~
+      |                        minimum
+treemap.c:137:24: error: initialization of ‘TreeNode *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+cc1: all warnings being treated as errors
+Compilation failed
+f89ea68
