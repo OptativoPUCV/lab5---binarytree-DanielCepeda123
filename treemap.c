@@ -209,7 +209,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     while (tree->current->pair->key < padre->pair->key){
       padre = padre->parent;
     }
+    return padre->pair;
   }
-  return padre->pair;
-    //return NULL;
+    return NULL;
 }
