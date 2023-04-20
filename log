@@ -713,3 +713,9 @@ treemap.c:50:13: error: unused variable ‘nuevo’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 423e965
+Thu 20 Apr 2023 04:31:05 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  21|3
+total_score: 40/70
+1ae7e23
