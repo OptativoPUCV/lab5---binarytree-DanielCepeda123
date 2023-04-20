@@ -189,31 +189,32 @@ Pair * upperBound(TreeMap * tree, void* key) {
     return NULL;
 }
 
-Pair * firstTreeMap(TreeMap * tree) {
-  TreeNode *primero = minimum(tree->root);
-  
-    return primero->pair;
-}
-
 Pair * nextTreeMap(TreeMap * tree) {
   TreeNode *siguiente;
   TreeNode *padre;
   
   if(tree->current->right != NULL){
+    // If there is a right subtree, find the minimum value in it
     siguiente = minimum(tree->current->right);
     tree->current = siguiente;
     return siguiente->pair;
-  }else{
-    
+  }
+  else{
+    // Traverse up the tree until we find a parent whose value is greater
+    // than the current value
     padre = tree->current->parent;
-    if(padre->parent == NULL) return NULL;
-    
-    while (tree->current->pair->key < padre->pair->key){
-      if(padre->parent == NULL) return NULL;
+    while (padre != NULL && tree->lower_than(tree->current->pair->key, padre->pair->key)){
       padre = padre->parent;
     }
+    // If we reached the root node without finding a larger value, we're done
+    if(padre == NULL) return NULL;
+    
+    // Otherwise, update the current node and return the corresponding pair
     tree->current = padre;
     return padre->pair;
   }
-    return NULL;
+  
+  // This line of code is unreachable, so we remove it
+  // return NULL;
 }
+
