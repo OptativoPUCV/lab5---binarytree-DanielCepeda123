@@ -107,3 +107,13 @@ Thu 20 Apr 2023 05:09:35 AM UTC:
  tests:  4|7
 total_score: 5/70
 47ce265
+Thu 20 Apr 2023 05:12:37 AM UTC: 
+ treemap.c | 3 +++
+ 1 file changed, 3 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:78:9: error: expected expression before ‘)’ token
+   78 |   while()
+      |         ^
+Compilation failed
+e02d5c1
