@@ -152,6 +152,10 @@ while(aux != NULL){
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
+  TreeNode *minimo = minimum(tree->root);
+  TreeNode *siguiente;
+
+  if (minimo->pair->key == key) return minimo->pair;
   //TreeNode *aux = tree->root;
   
     return NULL;
