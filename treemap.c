@@ -103,7 +103,9 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
   
   TreeNode *aux = tree->root;
 
-  if(is_equal(tree, aux->pair->key, key) == 1){
+  do
+    {
+      if(is_equal(tree, aux->pair->key, key) == 1){
     tree->current = aux;
     return aux->pair;
   }
@@ -114,12 +116,14 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     else{
       aux = aux->right;
     }
-  }
+
+      
+    }while (aux->right != NULL || aux->left != NULL)
+  
 
 
-  }
 
-  if (aux == NULL) return NULL;
+  if(aux == NULL) return NULL;
   return NULL;
 }
 
