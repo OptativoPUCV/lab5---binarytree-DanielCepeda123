@@ -843,3 +843,9 @@ treemap.c:57:20: error: the comparison will always evaluate as ‘true’ for th
 cc1: all warnings being treated as errors
 Compilation failed
 5d3ad1c
+Thu 20 Apr 2023 05:33:21 PM UTC: 
+ treemap.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+ tests:  22|3
+total_score: 45/70
+8dad927
