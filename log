@@ -899,3 +899,9 @@ test.c:(.text+0xea8): undefined reference to `firstTreeMap'
 collect2: error: ld returned 1 exit status
 Compilation failed
 ce007c5
+Thu 20 Apr 2023 09:06:40 PM UTC: 
+ treemap.c | 26 +++++++++++++-------------
+ 1 file changed, 13 insertions(+), 13 deletions(-)
+ tests:  22|3
+total_score: 45/70
+248d283
