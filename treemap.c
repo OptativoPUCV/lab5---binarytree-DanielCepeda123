@@ -47,34 +47,48 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
-  tree->current = tree->root;
   TreeNode *new = createTreeNode(key, value);
-  
-  if(tree->root == NULL){
+
+  if (tree->root == NULL) {
+    // if the tree is empty, set the new node as the root
     tree->root = new;
     return;
   }
-  
-  if(searchTreeMap(tree, key) != NULL) return;
-  while(tree->current != NULL)
-    {
-      if(tree->lower_than(tree->current->pair->key, key))
-      {
-        //hacia derecha
-        if(tree->current->right == NULL){
-          tree->current->right = new;
-          new->parent = tree->current->right;
-          return;
-        }
-        tree->current = tree->current->right;
+
+  TreeNode *current = tree->root;
+  while (1) {
+    int cmp = tree->lower_than(key, current->pair->key);
+
+    if (cmp < 0) {
+      // the key is less than the current node's key, move to the left subtree
+      if (current->left == NULL) {
+        // if there is no left subtree, insert the new node as the left child
+        current->left = new;
+        new->parent = current;
+        return;
+      } else {
+        // otherwise, continue searching in the left subtree
+        current = current->left;
       }
-      else
-      {
-        //hacia izq
-        tree->current = tree->current->left;
+    } else if (cmp > 0) {
+      // the key is greater than the current node's key, move to the right subtree
+      if (current->right == NULL) {
+        // if there is no right subtree, insert the new node as the right child
+        current->right = new;
+        new->parent = current;
+        return;
+      } else {
+        // otherwise, continue searching in the right subtree
+        current = current->right;
       }
+    } else {
+      // the key is already in the tree, update the value and return
+      current->pair->value = value;
+      return;
     }
+  }
 }
+
 
 TreeNode * minimum(TreeNode * x){
 
