@@ -36,3 +36,27 @@ treemap.c:44:12: error: invalid type argument of ‘->’ (have ‘int’)
       |            ^~
 Compilation failed
 724b8d1
+Thu 20 Apr 2023 04:42:17 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:3: error: unknown type name ‘treeMap’; did you mean ‘TreeMap’?
+   41 |   treeMap nuevoMapa;
+      |   ^~~~~~~
+      |   TreeMap
+treemap.c:42:12: error: invalid type argument of ‘->’ (have ‘int’)
+   42 |   nuevoMapa->root = NULL;
+      |            ^~
+treemap.c:43:12: error: invalid type argument of ‘->’ (have ‘int’)
+   43 |   nuevoMapa->current = NULL;
+      |            ^~
+treemap.c:44:12: error: invalid type argument of ‘->’ (have ‘int’)
+   44 |   nuevoMapa->lower_than = lower_than;
+      |            ^~
+treemap.c:45:12: error: returning ‘int’ from a function with return type ‘TreeMap *’ makes pointer from integer without a cast [-Werror=int-conversion]
+   45 |     return nuevoMapa;
+      |            ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+2ecd977
