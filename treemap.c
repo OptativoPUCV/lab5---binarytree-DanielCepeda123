@@ -195,12 +195,6 @@ Pair * firstTreeMap(TreeMap * tree) {
     return primero->pair;
 }
 
-Pair * firstTreeMap(TreeMap * tree) {
-  TreeNode *primero = minimum(tree->root);
-  
-    return primero->pair;
-}
-
 Pair * nextTreeMap(TreeMap * tree) {
   TreeNode *siguiente;
   TreeNode *padre;
