@@ -178,8 +178,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
 
   if (key == ub->pair->key) return ub->pair;
 
-  while(1)
-  {
+  //while(1)
+  //{
     if(tree->current->pair->key == key) return tree->current->pair;
     
     if(key < tree->root->pair->key)
@@ -187,7 +187,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
       tree->current = tree->root->left;
     }
        
-  }
+  //}
   
   /* TreeNode *minimo = minimum(tree->root);
   TreeNode *siguiente = minimo;
