@@ -204,13 +204,14 @@ Pair * nextTreeMap(TreeMap * tree) {
     siguiente = minimum(tree->current->right);
     tree->current = siguiente;
     return siguiente->pair;
+    
   }else{
     
     padre = tree->current->parent;
     if(padre->parent == NULL) return NULL;
     
     while (tree->current->pair->key < padre->pair->key){
-      if(padre->parent == NULL) return NULL;
+      //if(padre->parent == NULL) return NULL;
       padre = padre->parent;
     }
     tree->current = padre;
