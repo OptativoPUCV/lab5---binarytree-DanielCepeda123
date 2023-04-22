@@ -184,14 +184,16 @@ Pair * upperBound(TreeMap * tree, void* key) {
     
     if(key < tree->root->pair->key)
     {
+      if(tree->current->pair->key > key && tree->current->pair->key < ub->pair->key) ub = tree->current;
       tree->current = tree->current->left;
       
     }else{
+      if(tree->current->pair->key > key && tree->current->pair->key < ub->pair->key) ub = tree->current;
       tree->current = tree->current->right;
     }
   }
   
-    return NULL;
+    return ub->pair;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
