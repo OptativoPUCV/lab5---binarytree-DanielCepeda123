@@ -1107,3 +1107,17 @@ Sat 22 Apr 2023 12:35:50 AM UTC:
  tests:  22|3
 total_score: 45/70
 4d91c51
+Sat 22 Apr 2023 12:37:41 AM UTC: 
+ treemap.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:187:7: error: ‘return’ with no value, in function returning non-void [-Werror=return-type]
+  187 |       return;
+      |       ^~~~~~
+treemap.c:176:8: note: declared here
+  176 | Pair * upperBound(TreeMap * tree, void* key) {
+      |        ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+dfbdd9d
