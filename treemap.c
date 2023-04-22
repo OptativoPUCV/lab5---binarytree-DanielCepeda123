@@ -182,6 +182,8 @@ while(aux != NULL){
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
+
+  if(tree->root == NULL) return NULL;
   
   TreeNode *ub = tree->root;
   tree->current = tree->root;
