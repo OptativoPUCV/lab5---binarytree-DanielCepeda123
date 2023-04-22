@@ -175,10 +175,10 @@ while(aux != NULL){
 
 Pair * upperBound(TreeMap * tree, void* key) {
   
-  //TreeNode *ub = tree->root;
+  TreeNode *ub = tree->root;
   tree->current = tree->root;
 
-  //if (key == ub->pair->key) return ub->pair;
+  if (key == ub->pair->key) return ub->pair;
 
   while(tree->current != NULL)
   {
@@ -191,17 +191,6 @@ Pair * upperBound(TreeMap * tree, void* key) {
       tree->current = tree->current->left;
       if(tree->current->pair->key == key) return tree->current->pair;
     }
-    
-    
-    /* if(key < tree->root->pair->key)
-    {
-      if(tree->current->pair->key > key && tree->current->pair->key < ub->pair->key) ub = tree->current;
-      tree->current = tree->current->left;
-      
-    }else{
-      if(tree->current->pair->key > key && tree->current->pair->key < ub->pair->key) ub = tree->current;
-      tree->current = tree->current->right;
-    }  */
     
   }
   return NULL;
