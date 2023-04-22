@@ -1255,3 +1255,9 @@ treemap.c:66:34: error: ‘new’ undeclared (first use in this function)
 treemap.c:66:34: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 01e5d12
+Sat 22 Apr 2023 08:49:23 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  22|3
+total_score: 45/70
+d16b39e
