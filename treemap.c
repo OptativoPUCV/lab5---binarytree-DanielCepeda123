@@ -183,7 +183,33 @@ while(aux != NULL){
 
 Pair * upperBound(TreeMap * tree, void* key) {
 
-  if(tree->root == NULL) return NULL;
+  if (tree == NULL || tree->root == NULL) {
+    return NULL; 
+  }
+
+  TreeNode *ub = tree->root;
+  tree->current = tree->root;
+
+  while (tree->current != NULL) {
+    if (tree->lower_than(tree->current->pair->key, key) == 1) {
+      tree->current = tree->current->right;
+    } else {
+      ub = tree->current;
+      tree->current = tree->current->left;
+    }
+  }
+
+  if (key >= ub->pair->key) {
+    ub = ub->right;
+  }
+
+  if (ub == NULL) {
+    return NULL;
+  }
+
+  return ub->pair;
+
+  /* if(tree->root == NULL) return NULL;
   
   TreeNode *ub = tree->root;
   tree->current = tree->root;
@@ -197,7 +223,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
       tree->current = tree->current->right;
 
       
-      /* if ((tree->current->pair->key >= key) && (tree->current->pair->key < ub->pair->key)){
+      ** if ((tree->current->pair->key >= key) && (tree->current->pair->key < ub->pair->key)){
         ub = tree->current; 
       } 
       
@@ -206,10 +232,10 @@ Pair * upperBound(TreeMap * tree, void* key) {
       tree->current = tree->current->left;
        if ((tree->current->pair->key >= key) && (tree->current->pair->key < ub->pair->key)){
         ub = tree->current;
-      } 
+      } **
       
       
-    } */
+    } 
     
   }else{
 
@@ -223,7 +249,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
 
   if(ub == NULL) return NULL;
     
-  return ub->pair;
+  return ub->pair; */
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
