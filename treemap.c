@@ -62,22 +62,22 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
       if(tree->lower_than(tree->current->pair->key, key) == 1)
       {
         //hacia derecha
-        if(tree->current->right == NULL){
-          tree->current->right = nuevo;
-          nuevo->parent = tree->current;
-          return;
-        }
-        tree->current = tree->current->right;
-      }
-      else
-      {
-        //hacia izq
         if(tree->current->left == NULL){
           tree->current->left = nuevo;
           nuevo->parent = tree->current;
           return;
         }
         tree->current = tree->current->left;
+      }
+      else
+      {
+        //hacia izq
+        if(tree->current->right == NULL){
+          tree->current->right = nuevo;
+          nuevo->parent = tree->current;
+          return;
+        }
+        tree->current = tree->current->right;
       }
     }
 }
