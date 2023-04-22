@@ -179,7 +179,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
 
   if (key == ub->pair->key) return ub->pair;
 
-  
+  while(current != NULL){
     if(tree->current->pair->key == key) return tree->current->pair;
     
     if(key < tree->root->pair->key)
@@ -189,6 +189,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     }else{
       tree->current = tree->current->right;
     }
+  }
   
     return NULL;
 }
