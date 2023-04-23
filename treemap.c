@@ -215,30 +215,6 @@ Pair * upperBound(TreeMap * tree, void* key) {
   
  
 }
-  /* if (tree->root == NULL) {
-    return NULL; 
-  }
-
-  TreeNode *ub = tree->root;
-  tree->current = tree->root;
-
-  while(tree->current != NULL){
-      if(is_equal(tree, tree->current->pair->key, key) == 1){
-    return tree->current->pair;
-    } else {
-        
-    if(tree->lower_than(tree->current->pair->key, key) == 0){
-      tree->current = tree->current->left;
-      
-    } else {
-      tree->current = tree->current->right;
-      //if(tree->current->pair->key < ub->pair->key) ub = tree->current;
-    }
-  }
-
-  if(ub == NULL) return NULL;
-
-  return ub->pair; */
 
 
 Pair * firstTreeMap(TreeMap * tree) {
@@ -248,6 +224,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
+  if (tree->current == NULL) return NULL;
   TreeNode *siguiente;
   TreeNode *padre;
   
