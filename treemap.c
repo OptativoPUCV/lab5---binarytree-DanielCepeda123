@@ -237,7 +237,7 @@ Pair * nextTreeMap(TreeMap * tree) {
   } else {
     
     padre = tree->current->parent;
-    if(padre == NULL) return NULL;
+    if(padre->parent == NULL) return NULL;
 
     if(tree->current == tree->root) return NULL;
     
