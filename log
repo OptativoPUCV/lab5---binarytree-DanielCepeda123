@@ -1431,3 +1431,18 @@ Sun 23 Apr 2023 12:28:41 AM UTC:
  tests:  24|2
 total_score: 55/70
 f26f84c
+Sun 23 Apr 2023 12:35:47 AM UTC: 
+ treemap.c | 37 ++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 36 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:246:1: error: control reaches end of non-void function [-Werror=return-type]
+  246 | }
+      | ^
+At top level:
+treemap.c:186:10: error: ‘upperBound’ defined but not used [-Werror=unused-function]
+  186 |   Pair * upperBound(TreeMap * tree, void* key) {
+      |          ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+a25d258
