@@ -200,7 +200,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
       
     } else {
       tree->current = tree->current->right;
-      if(tree->current->pair->key < ub->pair->key) ub = tree->current;
+      //if(tree->current->pair->key < ub->pair->key) ub = tree->current;
     }
   }
 
