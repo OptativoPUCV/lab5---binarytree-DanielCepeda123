@@ -183,7 +183,7 @@ while(aux != NULL){
 
 Pair * upperBound(TreeMap * tree, void* key) {
 
- /* if (tree->root == NULL) {
+  if (tree->root == NULL) {
     return NULL; 
   }
 
@@ -206,8 +206,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
 
   if(ub == NULL) return NULL;
 
-  return ub->pair; */
-  return NULL;
+  return ub->pair; 
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
