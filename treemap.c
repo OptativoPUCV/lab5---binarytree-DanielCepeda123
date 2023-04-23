@@ -184,7 +184,7 @@ while(aux != NULL){
 Pair * upperBound(TreeMap * tree, void* key) {
 
   tree -> current = tree -> root;
-  TreeNode *ub_node = NULL;
+  TreeNode *ub = NULL;
   
   
   
@@ -199,7 +199,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     }
     if(tree->lower_than(key, tree ->current->pair->key))
     {
-      ub_node = tree->current;
+      ub = tree->current;
       tree-> current = tree->current->left;
     }
     else
@@ -208,8 +208,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
     }
   }
 
-  if(ub_node != NULL){
-    return ub_node->pair;
+  if(ub != NULL){
+    return ub->pair;
   }
   else {
     return NULL;
