@@ -1446,3 +1446,12 @@ treemap.c:186:10: error: ‘upperBound’ defined but not used [-Werror=unused-f
 cc1: all warnings being treated as errors
 Compilation failed
 a25d258
+Sun 23 Apr 2023 12:36:01 AM UTC: 
+ treemap.c | 2 --
+ 1 file changed, 2 deletions(-)
+In file included from test.c:4:
+treemap.c:244:1: error: expected identifier or ‘(’ before ‘}’ token
+  244 | }
+      | ^
+Compilation failed
+1a022eb
